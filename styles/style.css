@@ -91,7 +91,7 @@
 }
 
 .description {
-  padding: 100px 0;/*неправильно, не по БЭМ*/
+  padding: 100px 0;
   display: flex; /*делаем блок флекс-контейнером*/
   justify-content: center; /*центрируем блок*/
 }
@@ -133,7 +133,7 @@
   font-weight: bold;
 }
 
-.digits { /*неправильно, не по БЭМ*/
+.digits {
   padding-bottom: 100px;
 }
 

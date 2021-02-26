@@ -1,7 +1,3 @@
-.bord {
-  border: 1px solid red;
-}
-
 .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
@@ -25,10 +21,6 @@
   min-height: 600px;
   max-height: 756px;
   /* выше установили ограничения для секции */
-}
-
-.page__header {
-  margin-bottom: 100px;
 }
 
 .logo {
@@ -99,179 +91,182 @@
 }
 
 .description {
-  display: flex;
-  justify-content: center;
-}
-
-.content__description {
-  margin-bottom: 100px;
+  padding: 100px 0;/*неправильно, не по БЭМ*/
+  display: flex; /*делаем блок флекс-контейнером*/
+  justify-content: center; /*центрируем блок*/
 }
 
 .two-columns {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
+  display: flex; /*флекс-контейнер*/
+  justify-content: space-between; /*раскидываем флекс-элементы по краям строки*/
+  width: 80%; /*по макету*/
 }
 .two-columns__brief {
-  margin: 0;
+  margin: 0; /*обнуляем отступы*/
   padding: 0;
-  width: 175px;
-  line-height: 1.2;
+  width: 175px; /*по макету*/
+  line-height: 1.2; /*типографика*/
   font-size: 18px;
   font-weight: normal;
   color: #2f80ed;
 }
-.two-columns__main-text {
+.two-columns__main-text { /*все по макету*/
   min-width: 784px;
   min-height: 230px;
   width: 80%;
 }
 .two-columns__paragraph {
-  margin: 0 0 30px 0;
+  margin: 0 0 30px 0; /*отделяем параграфы друг от друга*/
   padding: 0;
-  line-height: 34px;
+  line-height: 34px; /*типографика*/
   font-size: 24px;
   font-weight: normal;
 }
 
-.two-columns__paragraph:last-of-type {
+.two-columns__paragraph:last-of-type { /*псевдокласс для удаления лишнего отступа у последнего параграфа*/
   margin-bottom: 0px;
 }
 
-.two-columns__span-accent {
+.two-columns__span-accent { /*типографика для текстового акцента*/
   line-height: 34px;
   font-size: 24px;
   font-weight: bold;
 }
 
-.section-title {
-  width: 60%;
-  text-align: center;
+.digits { /*неправильно, не по БЭМ*/
+  padding-bottom: 100px;
 }
 
-.section-title_theme_white {
-  line-height: 1.15;
+.section-title {
+  width: 60%; /*ширина блока заголовка*/
+  text-align: center; /*центрирование текста*/
+}
+
+.section-title_theme_white { /*модификатор заголовка для светлого фона*/
+  line-height: 1.15; /*не стал задавать здесь цвет текста, так по умолчанию черный*/
   font-size: 60px;
   font-weight: bold;
 }
 
-.content__digits {
-  margin-bottom: 100px;
-}
-
-.digits__section-title {
+.digits__section-title { /*микс блока с элементом для позиционирования блока section-title*/
   margin-bottom: 20px;
 }
 
-.section-subtitle {
+.section-subtitle { /*аналогично заголовку*/
   width: 60%;
   text-align: center;
 }
 
-.section-subtitle_theme_white {
+.section-subtitle_theme_white { /*модификатор подзаголовка для светлого фона*/
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
 }
 
-.table {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
-  width: 1100px;
+.table { /*стили таблицы*/
+  list-style: none; /*убираем маркеры*/
+  display: flex; /*превращаем список в строку*/
+  flex-wrap: wrap; /*теперь в две строки за счет переноса*/
+  justify-content: space-between; /*равномерно раскидываем внутри таблицы*/
+  padding: 0; /*убираем ненужный внутренний отступ справа от левой границы списка*/
+  width: 1100px; /*по макету*/
 }
 
 .table_theme_white {
+  /*этот модификатор пуст, но модификатор для темного фона будет не пустым, так как в нем мы заданим позиционирование для треугольника*/
 }
 
 .table__cell {
+  /*у ячеек нет заданной стилизации, но если будут, они буду записаны здесь*/
 }
 
-.table__cell_theme_white {
+.table__cell_theme_white { /*стилизация и позиционирование ячеек таблицы на светлом фоне*/
   width: 250px;
   color: #000000;
-  margin-right: 0;
+  margin-right: 0; /*непонятно зачем тут это*/
   margin-top: 60px;
 }
 
 .table__heading {
-  margin: 0;
+  margin: 0; /*сбрасываем отступы*/
   padding: 0;
 }
 
-.table_heading_theme_white {
+.table_heading_theme_white { /*задаем в модификаторе типографику*/
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
 }
 
 .table__text {
-  margin: 20px 0 0 0;
+  margin: 20px 0 0 0; /*отталкиваем текст от заголовка */
   padding: 0;
 }
 
-.table_text_theme_white {
+.table_text_theme_white { /*задаем в модификаторе типографику*/
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
 }
 
 .feynman {
-  position: relative;
-  height: 790px;
-  background-color: #f2f2f2;
-  background-image: url('../images/feynman.png');
-  background-repeat: no-repeat;
-  background-size: 867px 637px;
-  background-position: left bottom;
-}
-.feynman__titles {
-  position: relative;
-  top: 100px;
-  text-align: center;
+  display: flex; /*чтобы заголовки не занимали лишнее место и размеры соответствовали размеру контента*/
+  flex-direction: column; /*чтобы заголовки распологались вдоль вертикали*/
+  align-items: center; /*центруем относительно вертикальной прямой в центре секции*/
+  position: relative; /*чтобы расположить ссылку относительно границ текущего блока*/
+  height: 790px; /*по макету*/
+  background-color: #f2f2f2; /*цвет фона*/
+  background-image: url(../images/feynman.png); /*картинка как фон*/
+  background-repeat: no-repeat; /*шобы не повторялось эт самое*/
+  background-size: 867px 637px; /*размеры*/
+  background-position: left bottom; /*позиционирования фоновой картинки*/
+  box-sizing: border-box; /*шобы паддинги не увеличивали размеры блока, а щемили контент*/
+  padding-top: 100px; /*щемим контент на сотку сверху*/
 }
 .feynman__title {
-  width: 648px;
-  margin-bottom: 70px;
-  line-height: 1.15;
+  text-align: center; /*центрируем текст*/
+  width: 648px; /*по макету*/
+  margin: 0 0 70px 0; /*отталкиваем подзаголовок от заголовка, а в остальрном обнуляем отступы*/
+  padding: 0; /*обнуляем отступы*/
+  line-height: 1.15; /*типографика*/
   font-size: 120px;
   font-weight: bold;
 }
 .feynman__subtitle {
-  line-height: 51px;
+  margin: 0; /*обнуляем отступы*/
+  padding: 0; /*обнуляем отступы*/
+  line-height: 51px; /*типографика*/
   font-size: 36px;
   font-weight: normal;
 }
 .feynman__link {
-  position: absolute;
-  top: 50%;
-  right: 48px;
   text-decoration: none;
   color: #2f80ed;
-  line-height: 51px;
+  position: absolute; /*позиционируем по макету*/
+  top: 50%; /*по макету, но честно я не уверен что тут правильно*/
+  right: 48px;
+  line-height: 51px; /*типографика*/
   font-size: 36px;
   font-weight: normal;
 }
 
 .kaufman {
-  position: relative;
-  background-color: #1f1f1f;
-  padding: 90px 0;
-  overflow: hidden;
+  position: relative; /*для позиционирования относительно границ данного блока*/
+  background-color: #1f1f1f; /*цвет фона*/
+  padding: 90px 0; /*отступы по макету*/
+  overflow: hidden; /*чтобы треугольник не увеличивал область видимости*/
 }
 
-.section-title_theme_dark {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  line-height: 1.15;
+.section-title_theme_dark { /*модификатор заголовка*/
+  position: relative; /*чтобы надпись была над треугольником*/
+  z-index: 2; /*чтобы надпись была над треугольником*/
+  color: #fff; /*цвет белый*/
+  line-height: 1.15; /*типографика*/
   font-size: 60px;
   font-weight: bold;
 }
 
-.section-subtitle_theme_dark {
+.section-subtitle_theme_dark { /*аналогично предыдущему*/
   position: relative;
   z-index: 2;
   color: #fff;
@@ -281,30 +276,30 @@
 }
 
 .table_theme_dark {
-  position: relative;
-  z-index: 2;
+  position: relative; /*чтобы таблица была над треугольником*/
+  z-index: 2; /*чтобы таблица была над треугольником*/
 }
 
-.table__cell_theme_dark {
+.table__cell_theme_dark { /*модификатор ячейки таблицы*/
   width: 200px;
   color: white;
   margin-right: 0;
   margin-top: 80px;
 }
 
-.table_heading_theme_dark {
+.table_heading_theme_dark { /*типографика*/
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
 }
 
-.table_text_theme_dark {
+.table_text_theme_dark { /*типографика*/
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
 }
 
-.kaufman__triangle {
+.kaufman__triangle { /*стилизация и позиционирование треугольника*/
   position: absolute;
   z-index: 1;
   right: -210px;
@@ -314,84 +309,81 @@
 }
 
 .footer {
-  min-height: 350px;
-  display: flex;
-  padding: 60px 0 40px 0;
-  background-color: #1f1f1f;
-  justify-content: center;
+  min-height: 350px; /*по макету*/
+  display: flex; /*чтобы колонки расположились вдоль горизонтали*/
+  padding: 60px 0 40px 0; /*отступы заданные по макету*/
+  background-color: #1f1f1f; /*фон по макету*/
+  justify-content: center; /*чтобы весь блок колонок оказался по центру*/
+  color: #fff; /*так задаю цвет всего последующего текста (кроме ссылок), так как данное свойство наследуемое*/
 }
 
-.footer__columns {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
+.footer__columns { /*блок колонок*/
+  display: flex; /*чтобы вдоль горизонтали*/
+  justify-content: space-between; /*чтобы получилось как по макету*/
+  width: 90%; /*согласно макету*/
 }
 
-.footer__column {
-  display: flex;
-  flex-direction: column;
+.footer__column { /*колонка*/
+  display: flex; /*теперь каждая колонка это флекс-контейнер*/
+  flex-direction: column; /*теперь это флекс-столбец*/
 }
 
-.footer__column_content_copyright {
-  flex-basis: 711px;
-  justify-content: space-between;
+.footer__column_content_copyright { /*колонка для копирайт-информации*/
+  flex-basis: 711px; /*по макету*/
+  justify-content: space-between;  /*чтобы как на макете раскидать по краям столбца лого и ФИО*/
 }
 
-.logo_place_footer {
+.logo_place_footer { /*тут все по макету и даже картинка тут*/
   width: 183px;
   height: 35px;
   background-image: url('../images/logo_place_footer.svg');
 }
 
 .footer__author {
-  color: #fff;
-  margin: 18px 0;
-  line-height: 25px;
+  margin: 18px 0; /*просят по макету добавить внешние отступы*/
+  line-height: 25px; /*см. типографика*/
   font-size: 18px;
   font-weight: normal;
 }
 
-.footer__column_content_info {
-  display: flex;
-  flex-direction: column;
-
+.footer__column_content_info { /*колонка О Практикуме*/
+  /*на макете не задана стилизация*/
 }
 
-.footer__column-heading {
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  line-height: 30px;
+.footer__column-heading { /*заголовки двух колонок*/
+  margin: 0; /*обнуляем отступы*/
+  padding: 0; /*-//-*/
+  line-height: 30px; /*типографика*/
   font-size: 18px;
   font-weight: bold;
 }
 
-.footer__column-links {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0 16px 0;
+.footer__column-links { /*блок ссылок*/
+  display: flex; /*делаем этот блок флекс-контейнером*/
+  flex-direction: column; /*чтобы ссылки стояли в столбик*/
+  margin: 20px 0 16px 0;  /*отступы блока ссылок*/
 }
 
-.footer__social-icon {
+.footer__social-icon { /*размеры изображениий иконок*/
   width: 16px;
   height: 16px;
 }
 
-.footer__column-link {
-  margin-bottom: 10px;
-  text-decoration: none;
+.footer__column-link { /*ссылки*/
+  margin-bottom: 10px; /*отступы между ссылками*/
+  text-decoration: none; /*типографика*/
   color: #fff;
   line-height: 30px;
   font-size: 18px;
   font-weight: normal;
 }
 
-.footer__column-link:last-of-type {
+.footer__column-link:last-of-type { /*псевдоэлемент чтобы удалить отступ после последний ссылки*/
   margin-bottom: 0;
 }
 
-.footer__column_content_social {
-  display: flex;
-  flex-direction: column;
+.footer__column_content_social { /*Колонка социальных сетей*/
+  display: flex; /*делаем блок флекс-контейнером*/
+  flex-direction: column; /*в столбец*/
 }
 

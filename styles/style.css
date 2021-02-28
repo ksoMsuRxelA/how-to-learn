@@ -62,11 +62,7 @@
   color: #2f80ed;
 }
 
-.header__link_active:hover {
-  text-decoration: underline;
-}
-
-.link_active:hover {
+.header__link:hover {
   text-decoration: underline;
 }
 
@@ -242,7 +238,7 @@
   font-weight: normal;
 }
 
-.feynman__link_active:hover {
+.feynman__link:hover {
   text-decoration: underline;
 }
 
@@ -386,7 +382,7 @@
   align-items: center;
 }
 
-.footer__column-link_active:hover {
+.footer__column-link:hover {
   text-decoration: underline;
 }
 

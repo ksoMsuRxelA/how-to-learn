@@ -9,10 +9,6 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-.centered-block {
-  margin: auto;
-}
-
 .header {
   display: flex;
   position: relative;
@@ -24,7 +20,7 @@
 }
 
 .logo {
-  /*это правило остается пустым*/
+  width: 183px; /*это правило остается пустым*/
 }
 
 .logo_place_header {
@@ -33,7 +29,6 @@
   z-index: 3;
   top: 30px;
   left: 64px;
-  width: 183px;
   height: 32px;
 }
 
@@ -65,6 +60,10 @@
 .header__link {
   text-decoration: none;
   color: #2f80ed;
+}
+
+.header__link_active:hover {
+  text-decoration: underline;
 }
 
 .link_active:hover {
@@ -209,7 +208,10 @@
   background-repeat: no-repeat; /*шобы не повторялось эт самое*/
   background-size: 867px 637px; /*размеры*/
   background-position: left bottom; /*позиционирования фоновой картинки*/
-  box-sizing: border-box; /*шобы паддинги не увеличивали размеры блока, а щемили контент*/
+  /*убрал свойство box-sizing и теперь дейтсивительно
+  подзаголовок встал на уровне со ссылкой. Просто в брифе написано высота 790пикс,
+  мне показалось что таким образом мы фиксируем высоту,
+  но теперь понял что высоту секции не стоит фиксировать*/
   padding-top: 100px; /*щемим контент на сотку сверху*/
 }
 
@@ -232,12 +234,16 @@
 .feynman__link {
   text-decoration: none;
   color: #2f80ed;
-  position: absolute; /*позиционируем по макету*/
+  position: absolute; /*позиционируем по макету*/ /*теперь ссылка и подзаголовок опять не на одном уровне, все благодаря этому свойству.*/
   top: 50%; /*по макету, но честно я не уверен что тут правильно*/
   right: 48px;
   line-height: 51px; /*типографика*/
   font-size: 36px;
   font-weight: normal;
+}
+
+.feynman__link_active:hover {
+  text-decoration: underline;
 }
 
 .kaufman {
@@ -255,9 +261,6 @@
   position: relative; /*чтобы надпись была над треугольником*/
   z-index: 2; /*чтобы надпись была над треугольником*/
   color: #fff; /*цвет белый*/
-  line-height: 1.15; /*типографика*/
-  font-size: 60px;
-  font-weight: bold;
 }
 
 .kaufman__section-subtitle {
@@ -268,9 +271,6 @@
   position: relative;
   z-index: 2;
   color: #fff;
-  line-height: 34px;
-  font-size: 24px;
-  font-weight: normal;
 }
 
 .kaufman__table {
@@ -290,19 +290,16 @@
 }
 
 .table_heading_theme_dark { /*типографика*/
-  line-height: 1.15;
-  font-size: 24px;
-  font-weight: bold;
+  /*никаких уникальных свойств*/
 }
 
 .table_text_theme_dark { /*типографика*/
-  line-height: 1.2;
-  font-size: 18px;
-  font-weight: normal;
+  /*никаких уникальных свойств*/
 }
 
 .kaufman__triangle {
   background-image: url(../images/kaufman-triangle.svg); /*стилизация и позиционирование треугольника*/
+  background-size: contain;
   position: absolute;
   z-index: 1;
   right: -210px;
@@ -338,7 +335,6 @@
 }
 
 .logo_place_footer { /*тут все по макету и даже картинка тут*/
-  width: 183px;
   height: 35px;
   background-image: url('../images/logo_place_footer.svg');
 }
@@ -372,6 +368,7 @@
 
 .footer__social-icon {
   display: inline-block;
+  vertical-align: text-bottom; /*пусть будет так...*/
   margin-right: 10px; /*размеры изображениий иконок*/
   width: 16px;
   height: 16px;
@@ -389,15 +386,19 @@
   align-items: center;
 }
 
-.footer__social_media_facebook {
+.footer__column-link_active:hover {
+  text-decoration: underline;
+}
+
+.footer__social-icon_media_facebook {
   background-image: url('../images/facebook_color_white.svg');
 }
 
-.footer__social_media_vk {
+.footer__social-icon_media_vk {
   background-image: url('../images/vk_color_white.svg');
 }
 
-.footer__social_media_instagram {
+.footer__social-icon_media_instagram {
   background-image: url('../images/instagram_color_white.svg');
 }
 
